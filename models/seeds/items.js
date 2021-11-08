@@ -20,13 +20,14 @@ const gourd = [
 	{
 		id: 4,
 		name:'Pointed Gourd',
-		description:'',
+		description:'It is a dioecious (male and female plants) vine (creeper) plant with heart-shaped leaves (cordate) and is grown on a trellis.',
 		image:'https://images.unsplash.com/photo-1601949077112-9e521918ff04?ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&ixlib=rb-1.2.1&auto=format&fit=crop&w=658&q=80' 
 	},
 	{
 		id: 5,
-		name:'',
-		description:'',
-		image:'' 
+		name:'Ivory Gourd',
+		description:'It grows primarily in tropical climates and is commonly found in the southern Indian states, where it forms a part of the local cuisine.',
+		image:'https://images.unsplash.com/photo-1505931799959-cfafe497af1a?ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&ixlib=rb-1.2.1&auto=format&fit=crop&w=872&q=80' 
 	}
 ]
+

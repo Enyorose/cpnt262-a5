@@ -1,8 +1,6 @@
 const express = require('express')
 const router = express.Router()
 
-const gourd = require('../models/seeds/items')
-
 const mongoose = require('mongoose');
 const dotenv = require('dotenv').config();
 
@@ -17,41 +15,56 @@ mongoose.connect(
     console.log(err)
   });
 
+  const gourdSchema = new mongoose.Schema({
+    id: Number,
+    name: String,
+    class: String,
+    description: String,
+    image: String
+  })
+  const Gourd = mongoose.model('Gourd', gourdSchema)
+
+  
 /*********************/
 /* Define API routes */
 /*********************/
 
 // List entry route
-router.get('/gourd', (req, res) => {
+router.get('/api/gourd', async (req, res) => {
+    
+    try{
+
+      const plants = await Gourd.find()
+
+      console.log(plants)
+      if(!plants){
+        throw new Error()
+      }
   
-    if (typeof gourd !== 'undefined' && Array.isArray(gourd)) {
+      res.send(plants)
   
-      res.send(gourd)
-      
-    } else {
+    } catch(err){
   
-      res.status(404)
-      res.send({error: 'File Not Found'})
-      
+    res.send({error: 'plant not found'})
     }
   
   })
   
   // Item route
-  router.get('/gourd/:id', (req, res) => {
-    let plant = null
-  
-    if (typeof gourd !== 'undefined' && Array.isArray(gourd)) {
-      plant = gourd.find(item => req.params.id === item.id) // Use Array.find() here
-    } else {
-      plant = null;
-    }
+  router.get('/api/gourd/:id', async(req, res) => {
+    try{
+
+      const plant = await Gourd.findOne({id: req.params.id})
     
-    if (typeof plant === 'object' && character !== null) {
+      if(!plant){
+        throw new Error()
+      }
+  
       res.send(plant)
-    } else {
-      res.status(404)
-      res.send({error: 'File Not Found'})
+  
+    } catch(err){
+  
+    res.send({error: 'plant not found'})
     }
   })
   

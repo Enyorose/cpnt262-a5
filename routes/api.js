@@ -4,6 +4,8 @@ const router = express.Router()
 const mongoose = require('mongoose');
 const dotenv = require('dotenv').config();
 
+router.use(express.static('public/index.html'))
+
 mongoose.connect(
   process.env.MONGODB_URL,
   { useUnifiedTopology: true, useNewUrlParser: true },
@@ -30,6 +32,12 @@ mongoose.connect(
 /*********************/
 
 // List entry route
+// router.get('/home',(req, res) => {
+   
+//   res.sendFile(__public + "/index.html")
+//   console.log()
+// })
+
 router.get('/api/gourd', async (req, res) => {
     
     try{
@@ -67,5 +75,7 @@ router.get('/api/gourd', async (req, res) => {
     res.send({error: 'plant not found'})
     }
   })
+
+
   
   module.exports = router

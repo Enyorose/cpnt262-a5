@@ -6,7 +6,7 @@ const app = express()
 
 const api = require('./routes/api.js')
 app.use('/', api)
-
+app.use(express.static('public'))
 /****************************/
 /* Handle 404, start server */
 /****************************/

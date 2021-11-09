@@ -6,6 +6,7 @@ const app = express()
 
 const api = require('./routes/api.js')
 app.use('https://for-the-gourds.herokuapp.com/', api)
+
 app.use(express.static('public'))
 /****************************/
 /* Handle 404, start server */

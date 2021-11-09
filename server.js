@@ -5,7 +5,7 @@ const express = require('express')
 const app = express()
 
 const api = require('./routes/api.js')
-app.use('https://for-the-gourds.herokuapp.com/', api)
+app.use('/', api)
 
 app.use(express.static('public'))
 /****************************/

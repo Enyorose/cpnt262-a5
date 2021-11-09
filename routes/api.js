@@ -36,7 +36,7 @@ router.get('/api/gourd', async (req, res) => {
 
       const plants = await Gourd.find()
 
-      console.log(plants)
+     
       if(!plants){
         throw new Error()
       }

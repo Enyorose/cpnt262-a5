@@ -29,7 +29,7 @@ mongoose.connect(
 /* Define API routes */
 /*********************/
 
-// List entry route
+// List entry route to get all of the objects
 
 router.get('/api/gourd', async (req, res) => {
     
@@ -46,12 +46,12 @@ router.get('/api/gourd', async (req, res) => {
   
     } catch(err){
   
-    res.send({error: 'plant not found'})
+    res.send({error: 'plants not found'})
     }
   
   })
   
-  // Item route
+  // Item route to get a single item
   router.get('/api/gourd/:id', async(req, res) => {
     try{
 

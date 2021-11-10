@@ -1,6 +1,8 @@
 # CPNT262-a5
 - Jessica Watson
-
+## Link
+- [Heroko deployed](https://for-the-gourds.herokuapp.com/)
+- [GH Repo](https://github.com/Enyorose/cpnt262-a5)
 
 ## Attributions
 - Photo of Calabash [muthengi mbuvi](https://unsplash.com/@muthengimbuvi)
